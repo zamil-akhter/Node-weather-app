@@ -1,5 +1,4 @@
 const express = require("express");
-const axios = require("axios");
 const utils = require('./src/utils/utils');
 require("dotenv").config();
 
@@ -29,7 +28,7 @@ const init = async () => {
     app.listen(port, () => {
       console.log(`Server is running on http://localhost:${port}`);
     });
-    
+
   } catch (error) {
     throw error;
   }
