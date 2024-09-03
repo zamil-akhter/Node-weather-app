@@ -10,7 +10,7 @@ const getGeolocation = async (address) => {
 };
 
 const getWeatherData = async (lat, lon) => {
-  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.APIKEY}`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_APIKEY}`;
   const response = await axios.get(weatherUrl);
   return response.data;
 };
