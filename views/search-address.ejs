@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e7ef;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .search-container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .search-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .search-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .search-container input[type="submit"] {
+            padding: 12px 25px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Weather Search</h1>
+        <form action="/weather" method="post">
+            <label for="location">Enter Location</label>
+            <input type="text" id="location" name="location" placeholder="Search Location" required>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</body>
+</html>

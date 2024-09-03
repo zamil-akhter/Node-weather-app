@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Details</title>
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .weather-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        max-width: 600px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .weather-container h1 {
+        margin-bottom: 15px;
+        font-size: 24px; 
+        color: #007BFF;
+      }
+
+      .weather-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .weather-main {
+        margin-bottom: 20px; /* More spacing for better readability */
+      }
+
+      .weather-main h2 {
+        font-size: 20px;
+        color: #444;
+        margin-bottom: 10px;
+      }
+
+      .weather-details p {
+        margin: 8px 0;
+        color: #555;
+        font-size: 18px;
+      }
+
+      .weather-details span {
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="weather-container">
+      <h1>Weather Details: <span id="city-name"><%= name %></span></h1>
+      <div class="weather-info">
+        <div class="weather-main">
+          <h2>Weather: <span id="weather-main"><%= weather[0].main %></span></h2>
+          <p>Description: <span id="weather-description"><%= weather[0].description %></span></p>
+        </div>
+        <div class="weather-details">
+          <p>Temperature: <span id="temp"><%= (main.temp - 273).toFixed(2) %> °C</span></p>
+          <p>Feels Like: <span id="feels-like"><%= (main.feels_like-273).toFixed(2) %> °C</span></p>
+          <p>Humidity: <span id="humidity"><%= main.humidity %> %</span></p>
+          <p>Pressure: <span id="pressure"><%= main.pressure %> hPa</span></p>
+          <p>Wind Speed: <span id="wind-speed"><%= wind.speed %> m/s</span></p>
+          <p>Wind Direction: <span id="wind-deg"><%= wind.deg %>°</span></p>
+          <p>Visibility: <span id="visibility"><%= visibility / 1000 %> km</span></p>   
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
