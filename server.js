@@ -17,13 +17,8 @@ const init = async () => {
     app.post("/weather", async (req, res) => {
       try {
         let address = req.body.location;
-        // console.log(".............>>>", address);
-       
         const { lat, lon } = await utils.getGeolocation(address);
-        
         const weatherData = await utils.getWeatherData(lat, lon);
-        // console.log(weatherData);
-
         res.render("weather", weatherData);
       } catch (error) {
         console.error("Error fetching weather data:", error.message);
@@ -34,6 +29,7 @@ const init = async () => {
     app.listen(port, () => {
       console.log(`Server is running on http://localhost:${port}`);
     });
+    
   } catch (error) {
     throw error;
   }
